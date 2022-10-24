@@ -85,6 +85,101 @@ main:
 	la $a0, newline
 	syscall
 	
+	#Provide arithmetic operation menu
+    	li $v0, 4
+    	la $a0, operation
+    	syscall
+
+   	#Addition operation
+    	add $s2, $s0, $s1
+
+    	#Print addition message
+    	li $v0, 4
+    	la $a0, addition
+    	syscall
+
+    	#Print addition result
+    	li $v0, 1
+    	move $a0, $s2
+    	syscall
+
+    	#Print newline 
+    	li $v0, 4
+    	la $a0, newline
+    	syscall
+
+    	#Subtraction operation
+    	sub $s2, $s0, $s1
+
+    	#Print subtraction message
+    	li $v0, 4
+    	la $a0, subtraction
+    	syscall
+
+    	#Print subtraction result
+    	li $v0, 1
+    	move $a0, $s2
+    	syscall
+
+    	#Print newline 
+    	li $v0, 4
+    	la $a0, newline
+    	syscall
+
+    	#Multiplication operation
+    	mul $s2, $s0, $s1
+
+    	#Print multiplication message
+    	li $v0, 4
+    	la $a0, multiplication
+    	syscall
+
+    	#Print multiplication result
+    	li $v0, 1
+    	move $a0, $s2
+    	syscall
+
+    	#Print newline 
+    	li $v0, 4
+    	la $a0, newline
+    	syscall
+
+    	#Division Operation
+    	div $s0, $s1
+
+    	#Print division message
+    	li $v0, 4
+    	la $a0, division
+    	syscall
+
+    	#Print newline 
+    	li $v0, 4
+    	la $a0, quotient
+    	syscall
+
+    	#Print division quotient
+    	li $v0, 1
+    	mflo $s2
+    	move $a0, $s2
+    	syscall
+
+    	#Print newline 
+    	li $v0, 4
+    	la $a0, remainder
+    	syscall
+
+    	#Print division remainder
+    	li $v0, 1
+    	mfhi $s2
+    	move $a0, $s2
+    	syscall
+
+    	#Print newline 
+    	li $v0, 4
+    	la $a0, newline
+    	syscall
+    	j exit
+	
 exit:
 	li $v0, 10
 	syscall
