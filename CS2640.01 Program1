@@ -152,7 +152,7 @@ main:
     	la $a0, division
     	syscall
 
-    	#Print newline 
+    	#Print quotient message
     	li $v0, 4
     	la $a0, quotient
     	syscall
@@ -163,7 +163,7 @@ main:
     	move $a0, $s2
     	syscall
 
-    	#Print newline 
+    	#Print remainder message
     	li $v0, 4
     	la $a0, remainder
     	syscall
@@ -200,3 +200,4 @@ equalComparison:
     	li $v0, 4
     	la $a0, equal
     	syscall
+    	j exit
