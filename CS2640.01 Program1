@@ -178,14 +178,25 @@ main:
     	li $v0, 4
     	la $a0, newline
     	syscall
-    	j exit
-	
-exit:
-	li $v0, 10
-	syscall
-	
+    	
+	#Print newline 
+        li $v0, 4
+        la $a0, newline
+        syscall
 
-	
-	
-	
-	
+    	#Test if numbers are equal
+    	beq $s0, $s1, equalComparison
+    	li $v0, 4
+    	la $a0, different
+    	syscall
+    	j exit
+
+exit:
+    	li $v0, 10
+    	syscall
+
+equalComparison:
+    	#Print equal message
+    	li $v0, 4
+    	la $a0, equal
+    	syscall
