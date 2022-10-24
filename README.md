@@ -1,6 +1,9 @@
 # CS2640-MIPS-Project-1
 
 Names: Evin Menendez Vargas, Nicholas Ramirez-Ornelas, Jack Morris, and Jasroop Singh
+Instructor: Danica Cariaga
+Class: CS 2640: Comp Org and Assembly Prog
+Date: 10/26/2022
 
 Goal: To familiarize yourself with different MIPS instructions, syscall services, the MARS environment, and overall practice with Assembly programming.
 
