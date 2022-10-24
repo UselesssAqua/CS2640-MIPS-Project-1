@@ -1,0 +1,82 @@
+#Program 1: Getting Familiar with Assembly - To familiarize ourselves with MIPS instructions, syscall services, the MARS enviornment, and overall practice with Assembly programming.
+
+#Names: Nicholas Ramirez-Ornelas, Jack Morris, Evin Menendez Vargas, Jasroop Singh
+#Date: 10-26-22
+#Class: CS2640: Comp Org and Assembly Programming
+#Professor: Danica Cariaga
+#Description: Task 1 practices getting user input and moving them to registers, and printing them back to user. Task 2 
+
+.data
+
+value1: .asciiz "Enter the first input: \n"
+value2: .asciiz "Enter the second input: \n"
+operation: .asciiz "Enter the arithmetic operation: \n"
+result: .asciiz "Your result is: "
+result2: .asciiz " and "
+period: .asciiz ". \n"
+newline: .asciiz "\n"
+
+.text
+
+main:
+
+	#Print the first input prompt
+	li $v0, 4
+	la $a0, value1
+	syscall
+	
+	#Get the first user input
+	li $v0, 5
+	syscall
+	
+	#Move first user input to register $s0
+	move $s0, $v0
+	
+	#Print the second input prompt
+	li $v0, 4
+	la $a0, value2
+	syscall
+	
+	#Get the second user input
+	li $v0, 5
+	syscall
+	
+	#Move second user input to register $s1
+	move $s1, $v0
+	
+	#Print $s0 message
+	li $v0, 4
+	la $a0, result
+	syscall
+	
+	#Print register $s0
+	li $v0, 1
+	move $a0, $s0
+	syscall
+	
+	#Print $s1 message
+	li $v0, 4
+	la $a0, result2
+	syscall
+	
+	
+	#Print register $s1
+	li $v0, 1
+	move $a0, $s1
+	syscall
+	
+	#Print $s1 message
+	li $v0, 4
+	la $a0, period
+	syscall
+	j exit
+	
+exit:
+	li $v0, 10
+	syscall
+	
+
+	
+	
+	
+	
