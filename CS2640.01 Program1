@@ -4,13 +4,24 @@
 #Date: 10-26-22
 #Class: CS2640: Comp Org and Assembly Programming
 #Professor: Danica Cariaga
-#Description: Task 1 practices getting user input and moving them to registers, and printing them back to user. Task 2 
+#Description: 
+		#Task 1 practices getting user input and moving them to registers, and printing them back to user.
+		#Task 2 practices using the user inputs to complete the following arithmetic operations below.
+		#Task 3 practices comparing the user inputs to determine whether they are the same or different.
 
 .data
 
 value1: .asciiz "Enter the first input: \n"
 value2: .asciiz "Enter the second input: \n"
-operation: .asciiz "Enter the arithmetic operation: \n"
+operation: .asciiz "Arithmetic operations are: \n"
+addition: .asciiz "Addition: "
+subtraction: .asciiz "Subtraction: "
+multiplication: .asciiz "Multiplication: "
+division: .asciiz "Division: "
+quotient: .asciiz "quotient: "
+remainder: .asciiz " remainder: "
+equal: .asciiz "User inputs are the same."
+different: .asciiz "User inputs are different."
 result: .asciiz "Your result is: "
 result2: .asciiz " and "
 period: .asciiz ". \n"
@@ -59,17 +70,20 @@ main:
 	la $a0, result2
 	syscall
 	
-	
 	#Print register $s1
 	li $v0, 1
 	move $a0, $s1
 	syscall
 	
-	#Print $s1 message
+	#Print period
 	li $v0, 4
 	la $a0, period
 	syscall
-	j exit
+	
+	#Print newline 
+	li $v0, 4
+	la $a0, newline
+	syscall
 	
 exit:
 	li $v0, 10
