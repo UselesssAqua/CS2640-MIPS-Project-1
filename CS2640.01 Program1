@@ -32,172 +32,172 @@ newline: .asciiz "\n"
 main:
 
 	#Print the first input prompt
-	li $v0, 4
-	la $a0, value1
+	li $v0, 4 	#Load immediate value 4 into register $v0
+	la $a0, value1	#Copy address of value1 into register $a0
 	syscall
 	
 	#Get the first user input
-	li $v0, 5
+	li $v0, 5	#Load immediate value 5 into register $v0
 	syscall
 	
 	#Move first user input to register $s0
-	move $s0, $v0
+	move $s0, $v0	#Move quantity from register $v0 to register $s0
 	
 	#Print the second input prompt
-	li $v0, 4
-	la $a0, value2
+	li $v0, 4	#Load immediate value 4 into register $v0
+	la $a0, value2	#Copy address of value2 into register $a0
 	syscall
 	
 	#Get the second user input
-	li $v0, 5
+	li $v0, 5	#Load immediate value 5 into register $v0
 	syscall
 	
 	#Move second user input to register $s1
-	move $s1, $v0
+	move $s1, $v0	#Move quantity from register $v0 to register $s1
 	
 	#Print $s0 message
-	li $v0, 4
-	la $a0, result
+	li $v0, 4	#Load immediate value 4 into register $v0
+	la $a0, result	#Copy address of result into register $a0
 	syscall
 	
 	#Print register $s0
-	li $v0, 1
-	move $a0, $s0
+	li $v0, 1	#Load immediate value 1 into register $v0
+	move $a0, $s0	#Move quantity from register $s0 to register $a0
 	syscall
 	
 	#Print $s1 message
-	li $v0, 4
-	la $a0, result2
+	li $v0, 4	#Load immediate value 4 into register $v0
+	la $a0, result2	#Copy address of result2 into register $a0
 	syscall
 	
 	#Print register $s1
-	li $v0, 1
-	move $a0, $s1
+	li $v0, 1	#Load immediate value 1 into register $v0
+	move $a0, $s1	#Move quantity from register $s1 to register $a0
 	syscall
 	
 	#Print period
-	li $v0, 4
-	la $a0, period
+	li $v0, 4	#Load immediate value 4 into register $v0
+	la $a0, period	#Copy address of period into register $a0
 	syscall
 	
 	#Print newline 
-	li $v0, 4
-	la $a0, newline
+	li $v0, 4	#Load immediate value 4 into register $v0
+	la $a0, newline		#Copy address of newline into register $a0
 	syscall
 	
 	#Provide arithmetic operation menu
-    	li $v0, 4
-    	la $a0, operation
+    	li $v0, 4		#Load immediate value 4 into register $v0
+    	la $a0, operation	#Copy address of operation into register $a0
     	syscall
 
    	#Addition operation
-    	add $s2, $s0, $s1
+    	add $s2, $s0, $s1	#Add quantities from $s0 and $s1, storing sum in $s2
 
     	#Print addition message
-    	li $v0, 4
-    	la $a0, addition
+    	li $v0, 4	#Load immediate value 4 into register $v0
+    	la $a0, addition	#Copy address of addition into register $a0
     	syscall
 
     	#Print addition result
-    	li $v0, 1
-    	move $a0, $s2
+    	li $v0, 1	#Load immediate value 1 into register $v0
+    	move $a0, $s2	#Move quantity from register $s2 to register $a0
     	syscall
 
     	#Print newline 
-    	li $v0, 4
-    	la $a0, newline
+    	li $v0, 4	#Load immediate value 4 into register $v0
+    	la $a0, newline		#Copy address of newline into register $a0
     	syscall
 
     	#Subtraction operation
-    	sub $s2, $s0, $s1
+    	sub $s2, $s0, $s1	#Subtract quantites from $s0 and $s1, storing difference in $s2
 
     	#Print subtraction message
-    	li $v0, 4
-    	la $a0, subtraction
+    	li $v0, 4		#Load immediate value 4 into register $v0
+    	la $a0, subtraction	#Copy address of subtraction into register $a0
     	syscall
 
     	#Print subtraction result
-    	li $v0, 1
-    	move $a0, $s2
+    	li $v0, 1		#Load immediate value 1 into register $v0
+    	move $a0, $s2		#Move quantity from register $s2 to register $a0
     	syscall
 
     	#Print newline 
-    	li $v0, 4
-    	la $a0, newline
+    	li $v0, 4		#Load immediate value 4 into register $v0
+    	la $a0, newline		#Copy address of newline into register $a0
     	syscall
 
     	#Multiplication operation
-    	mul $s2, $s0, $s1
+    	mul $s2, $s0, $s1	#Multiply quantities from $s0 and $s1, storing result $s2 
 
     	#Print multiplication message
-    	li $v0, 4
-    	la $a0, multiplication
+    	li $v0, 4			#Load immediate value 4 into register $v0
+    	la $a0, multiplication		#Copy address of multiplication into register $a0
     	syscall
 
     	#Print multiplication result
-    	li $v0, 1
-    	move $a0, $s2
+    	li $v0, 1		#Load immediate value 1 into register $v0
+    	move $a0, $s2		#Move quantity from register $s2 to register $a0
     	syscall
 
     	#Print newline 
-    	li $v0, 4
-    	la $a0, newline
+    	li $v0, 4		#Load immediate value 4 into register $v0
+    	la $a0, newline		#Copy address of newline into register $a0
     	syscall
 
     	#Division Operation
-    	div $s0, $s1
+    	div $s0, $s1		#Divide quantities from $s1 and $s0
 
     	#Print division message
-    	li $v0, 4
-    	la $a0, division
+    	li $v0, 4		#Load immediate value 4 into register $v0
+    	la $a0, division	#Copy address of division into register $a0
     	syscall
 
     	#Print quotient message
-    	li $v0, 4
-    	la $a0, quotient
+    	li $v0, 4		#Load immediate value 4 into register $v0
+    	la $a0, quotient	#Copy address of quotient into register $a0
     	syscall
 
     	#Print division quotient
-    	li $v0, 1
-    	mflo $s2
-    	move $a0, $s2
+    	li $v0, 1		#Load immediate value 1 into register $v0
+    	mflo $s2		#Move quantity to $s2
+    	move $a0, $s2		#Move quantity from register $s2 to register $a0
     	syscall
 
     	#Print remainder message
-    	li $v0, 4
-    	la $a0, remainder
+    	li $v0, 4		#Load immediate value 4 into register $v0
+    	la $a0, remainder	#Copy address of remainder into register $a0
     	syscall
 
     	#Print division remainder
-    	li $v0, 1
-    	mfhi $s2
-    	move $a0, $s2
+    	li $v0, 1		#Load immediate value 1 into register $v0
+    	mfhi $s2		#Move quantity to $s2
+    	move $a0, $s2		#Move quantity from register $s2 to register $a0
     	syscall
 
     	#Print newline 
-    	li $v0, 4
-    	la $a0, newline
+    	li $v0, 4		#Load immediate value 4 into register $v0
+    	la $a0, newline		#Copy address of newline into register $a0
     	syscall
     	
 	#Print newline 
-        li $v0, 4
-        la $a0, newline
+        li $v0, 4		#Load immediate value 4 into register $v0
+        la $a0, newline		#Copy address of newline into register $a0
         syscall
 
     	#Test if numbers are equal
-    	beq $s0, $s1, equalComparison
-    	li $v0, 4
-    	la $a0, different
+    	beq $s0, $s1, equalComparison		#Tests if registers are equal
+    	li $v0, 4				#Load immediate value 4 into register $v0
+    	la $a0, different			#Copy address of different into register $a0
     	syscall
     	j exit
 
 exit:
-    	li $v0, 10
+    	li $v0, 10	#Load immediate value 10 into register $v0
     	syscall
 
 equalComparison:
     	#Print equal message
-    	li $v0, 4
-    	la $a0, equal
+    	li $v0, 4		#Load immediate value 4 into register $v0
+    	la $a0, equal		#Copy address of equal into register $a0
     	syscall
     	j exit
